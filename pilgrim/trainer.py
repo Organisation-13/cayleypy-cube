@@ -69,12 +69,14 @@ class Trainer:
             data = X[i:i + self.batch_size]
             target = Y[i:i + self.batch_size]
             output = self.net(data)
-            loss = self.criterion(output, target)
+
             
+            loss = self.criterion(output, target)
+            print(f'batch: {i}; output: {output}; target: {target}; loss: {loss};;;')
             self.optimizer.zero_grad()
             loss.backward()
             self.optimizer.step()
-
+            print(f' :  ;  :  ;  :  ;  : ; avg_loss={avg_loss}')
             avg_loss += loss.item()
 
         return avg_loss / total_batches if total_batches > 0 else avg_loss
