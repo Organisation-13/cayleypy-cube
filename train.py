@@ -99,7 +99,7 @@ def main():
         model.z_add = - V0.min().item()
     
     if len(args.weights) > 0:
-        model.load_state_dict(torch.load(f"weights/{args.weights}.pth", weights_only=True, map_location=device))
+        model.load_state_dict(torch.load(f"{args.weights}.pth", weights_only=True, map_location=device))
         print(f"Weights {args.weights} loaded.")
 
     # Calculate the number of model parameters
