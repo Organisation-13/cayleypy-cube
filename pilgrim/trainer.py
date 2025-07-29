@@ -87,7 +87,9 @@ class Trainer:
             data_gen_start = time.time()
             X, Y = self.generate_random_walks(k=self.walkers_num, K_min=self.K_min, K_max=self.K_max)
             data_gen_time = time.time() - data_gen_start
+            print(f"X: {X}; Y: {Y}")
 
+            
             # Training step
             epoch_start = time.time()
             train_loss = self._train_epoch(X, Y.float())
