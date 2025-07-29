@@ -68,6 +68,9 @@ def main():
         weights_only=False, map_location=device
     ))
     model.eval()
+    print(f'model : {model}')
+    global model_global 
+    model_global = model
     
     # Fix float16
     #model = model.half()
