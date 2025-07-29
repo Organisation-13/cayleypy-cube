@@ -70,8 +70,8 @@ def main():
     model.eval()
     
     # Fix float16
-    #model = model.half()
-    #model.dtype = torch.float16
+    model = model.half()
+    model.dtype = torch.float16
     
     if V0.min() < 0:
         model.z_add = -V0.min().item()
